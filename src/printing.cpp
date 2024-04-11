@@ -27,10 +27,10 @@ void impTablero(SDL_Renderer *renderer,SDL_Event &event){
     pieza.w = SIDECELL-8;
     for(int i=1;i<=8;i++){
         for(int j=1;j<=8;j++){
-            if(pieceTranslator.count(position[i][j])){
+            if(pieceTranslator.count(actualPosition.position[i][j])){
                 pieza.y = SIDECELL*(i-1)+54;
                 pieza.x = SIDECELL*(j-1)+54;
-                SDL_RenderCopy(renderer,pieceSprites[pieceTranslator[position[i][j]]],NULL,&pieza);
+                SDL_RenderCopy(renderer,pieceSprites[pieceTranslator[actualPosition.position[i][j]]],NULL,&pieza);
             }
         }
     }

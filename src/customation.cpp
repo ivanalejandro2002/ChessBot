@@ -18,13 +18,13 @@ string boardType = "assets/sets/classic/";
 void piecesSpriteInitialization(SDL_Renderer *renderer){
     
     pieceTranslator['p']=1;
-    pieceTranslator['k']=2;
+    pieceTranslator['n']=2;
     pieceTranslator['b']=3;
     pieceTranslator['r']=4;
     pieceTranslator['q']=5;
     pieceTranslator['k']=6;
     pieceTranslator['P']=7;
-    pieceTranslator['K']=8;
+    pieceTranslator['N']=8;
     pieceTranslator['B']=9;
     pieceTranslator['R']=10;
     pieceTranslator['Q']=11;
