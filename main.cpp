@@ -23,7 +23,7 @@ int main(){
     newPieces("classic",renderer);
     newBoard("classic",renderer);
     actualPosition.lectura();
-    impTablero(renderer,event);
+    impTablero(renderer,event,actualPosition);
 
     return 0;
 }
