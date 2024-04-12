@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include <string>
+#include <map>
 using namespace std;
 struct chessPosition{
     vector<vector<char> > position;
@@ -17,6 +18,7 @@ struct chessPosition{
     int rowEnpassant,columnEnpassant;
     int halfmove;
     int fullmove;
+    map<pair<int,int>,char> existentPieces[2];
     chessPosition(int x):position(vector<vector<char> >(9,vector<char>(9))){};
     bool valid(char co){
         if((co>='0' && co<='9') || co=='r' || co=='R' || co=='k'
@@ -112,7 +114,11 @@ struct chessPosition{
             boardColumn = 1;
             while(cad[i]!='/' && cad[i]!=' '){
                 if(cad[i]>='1' && cad[i]<='8')boardColumn+=cad[i]-'1';
-                else position[boardRow][boardColumn]=cad[i];
+                else {
+                    if(cad[i]>='A' && cad[i]<='Z')existentPieces[0][{boardRow,boardColumn}]=cad[i];
+                    else existentPieces[1][{boardRow,boardColumn}]=cad[i];
+                    position[boardRow][boardColumn]=cad[i];
+                }
                 boardColumn++;
                 i++;
             }
