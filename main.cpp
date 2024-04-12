@@ -3,7 +3,7 @@
 #include "include/SDL_image.h"
 #include "src/printing.cpp"
 #include "src/position.cpp"
-
+#include "src/game/gameState.cpp"
 #undef main
 using namespace std;
 int main(){
@@ -24,6 +24,10 @@ int main(){
     newBoard("classic",renderer);
     actualPosition.lectura();
     impTablero(renderer,event,actualPosition);
-
+    actualState(actualPosition);
+    while(1){
+        SDL_RenderPresent(renderer);
+        if(SDL_PollEvent(&event) && event.type == SDL_QUIT)break;
+    }
     return 0;
 }

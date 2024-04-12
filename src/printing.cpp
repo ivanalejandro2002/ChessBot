@@ -18,7 +18,7 @@ void impTablero(SDL_Renderer *renderer,SDL_Event &event,chessPosition &positionT
         for(int j=0;j<8;j++){
             pieza.y = SIDECELL*i+50;
             pieza.x = SIDECELL*j+50;
-            if(((i&1)^(j&1)))SDL_RenderCopy(renderer,cblanca,NULL,&pieza);
+            if(!((i&1)^(j&1)))SDL_RenderCopy(renderer,cblanca,NULL,&pieza);
             else SDL_RenderCopy(renderer,cnegra,NULL,&pieza);
         }
     }
@@ -35,9 +35,6 @@ void impTablero(SDL_Renderer *renderer,SDL_Event &event,chessPosition &positionT
         }
     }
 
-    while(1){
-        SDL_RenderPresent(renderer);
-        if(SDL_PollEvent(&event) && event.type == SDL_QUIT)break;
-    }
+    
 }
 #endif
