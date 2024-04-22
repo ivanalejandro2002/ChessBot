@@ -10,7 +10,7 @@ vector<pair<int,int> > kingMoves = {{-1,-1},{-1,0},{-1,1},
                                     {0,-1},         {0,1},
                                     {1,-1}, {0,1} ,{1,1}};
 vector<pair<int,int> > pawnMoves[2] = {{{-1,-1},{-1,0},{-1,1}},
-                                        {{1,-1},{1,0},{1,1}}};
+                                        {{1,1},{1,0},{1,-1}}};
 vector<pair<int,int> > rookMoves = {{1,0},{0,1},{-1,0},{0,-1}};
 vector<pair<int,int> > bishopMoves = {{1,1},{-1,-1},{-1,1},{1,-1}};
 
