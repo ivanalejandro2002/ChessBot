@@ -18,6 +18,7 @@ struct chessPosition{
     int rowEnpassant,columnEnpassant;
     int halfmove;
     int fullmove;
+    vector<short> movements;
     map<pair<int,int>,char> existentPieces[2];
     chessPosition(int x):position(vector<vector<char> >(9,vector<char>(9))){};
     bool valid(char co){
